@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Nequi</title>
+    <!-- Enlace a la hoja de estilo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo de Nequi -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='Images/nequi-logo.webp') }}" alt="Nequi Logo" class="logo">
+        </div>
+        
+
+        <!-- Encabezado -->
+        <h1>Bienvenido a Nequi</h1>
+        <p>Gestión simple, rápida y segura de tu dinero.</p>
+
+       <!-- Botón para enviar a una página específica dentro de un formulario -->
+<form action="{{ url_for('login') }}">
+    <button class="btn" type="submit">Iniciar Sesión</button>
+</form>
+
+<form action="{{ url_for('register') }}">
+    <button class="btn" type="submit">Registrarse</button>
+</form>
+
+
+        <!-- Enlace informativo hacia la URL externa -->
+        <a href="https://www.nequi.com.co/personas/conocenos/somos-nequi" target="_blank">¿Cómo funciona?</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nequi App. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+
+

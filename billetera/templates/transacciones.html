@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transacciones - Nequi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Transacciones</h1>
+        <p>Saldo actual: ${{ saldo }}</p>
+
+        <form method="POST">
+            <label for="tipo">Tipo de Transacción:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="consignacion">Consignación</option>
+                <option value="retiro">Retiro</option>
+            </select>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" name="monto" required>
+            
+            <div id="cuenta_destino_div" style="display:none;">
+                <label for="cuenta_destino">Cuenta Destino:</label>
+                <input type="text" id="cuenta_destino" name="cuenta_destino" placeholder="Ingrese la cuenta de destino">
+            </div>
+
+            <button type="submit">Realizar Transacción</button>
+        </form>
+
+        <h3>Movimientos:</h3>
+        <ul>
+            {% for movimiento in movimientos %}
+                <li>{{ movimiento }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("tipo").addEventListener("change", function() {
+            if (this.value == "consignacion") {
+                document.getElementById("cuenta_destino_div").style.display = "block";
+            } else {
+                document.getElementById("cuenta_destino_div").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

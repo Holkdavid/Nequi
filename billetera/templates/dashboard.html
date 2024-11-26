@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nequi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a Nequi</h1>
+        <p>Saldo actual: ${{ saldo }}</p>
+        <a href="{{ url_for('transacciones') }}">Ir a Transacciones</a>
+        <a href="{{ url_for('servicios') }}">Ir a Servicios</a>
+    </div>
+</body>
+</html>

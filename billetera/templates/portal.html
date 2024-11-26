@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Portal - Nequi{% endblock %}
+
+{% block content %}
+    <div class="portal-container">
+        <h1>Bienvenido a Nequi</h1>
+        <div class="options">
+            <div class="option-card">
+                <a href="{{ url_for('transacciones') }}">
+                    <img src="{{ url_for('static', filename='img/transacciones-icon.png') }}" alt="Transacciones">
+                    <h3>Realizar Transacción</h3>
+                </a>
+            </div>
+            <div class="option-card">
+                <a href="{{ url_for('servicios') }}">
+                    <img src="{{ url_for('static', filename='img/servicios-icon.png') }}" alt="Servicios">
+                    <h3>Servicios</h3>
+                </a>
+            </div>
+            <div class="option-card">
+                <a href="{{ url_for('saldo') }}">
+                    <img src="{{ url_for('static', filename='img/saldo-icon.png') }}" alt="Consultar Saldo">
+                    <h3>Consultar Saldo</h3>
+                </a>
+            </div>
+            <div class="option-card">
+                <a href="{{ url_for('movimientos') }}">
+                    <img src="{{ url_for('static', filename='img/movimientos-icon.png') }}" alt="Movimientos">
+                    <h3>Ver Movimientos</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
